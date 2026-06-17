@@ -1,2 +1,223 @@
 # test
 test
+<!DOCTYPE html>
+<html lang="ny">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson Desire Hub - Malawi Full</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; background: #0f172a; color: white; }
+        .app-screen { display: none; min-height: 100vh; }
+        .app-screen.active { display: block; }
+        .yellow-btn { background: #FFC107; color: #000; font-weight: 600; }
+        .yellow-btn:hover { background: #FFB300; }
+        .nav-active { color: #FFC107; }
+        .card-dark { background: #1e293b; border: 1px solid #334155; }
+    </style>
+</head>
+<body>
+
+    <!-- SCREEN 1: SPLASH -->
+    <div id="splash" class="app-screen active flex flex-col items-center justify-center p-6 text-center" style="background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);">
+        <div class="mb-8">
+            <div class="text-6xl font-bold text-yellow-400 mb-2">W</div>
+            <h1 class="text-2xl font-bold text-yellow-400">WILSON DESIRE HUB</h1>
+            <p class="text-sm text-yellow-400">MALAWI FULL</p>
+        </div>
+        <p class="text-gray-300 mb-12">Everything you need,<br>all in one place!</p>
+        <div class="w-full space-y-3">
+            <button onclick="showScreen('login')" class="yellow-btn w-full py-3 rounded-lg">Login</button>
+            <button onclick="showScreen('register')" class="border border-yellow-400 text-yellow-400 w-full py-3 rounded-lg">Get Started</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: CREATE ACCOUNT -->
+    <div id="register" class="app-screen p-6">
+        <h2 class="text-2xl font-bold mb-1">Create Account</h2>
+        <p class="text-gray-400 mb-6">Join Wilson Desire Hub</p>
+        <div class="space-y-4">
+            <div><label class="text-sm">Full Name</label><input type="text" placeholder="Enter your full name" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mt-1"></div>
+            <div><label class="text-sm">Phone Number</label><input type="tel" placeholder="Enter your phone number" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mt-1"></div>
+            <div><label class="text-sm">Email (Optional)</label><input type="email" placeholder="Enter your email" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mt-1"></div>
+            <div><label class="text-sm">Password</label><input type="password" placeholder="Create a password" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mt-1"></div>
+            <div><label class="text-sm">Confirm Password</label><input type="password" placeholder="Confirm your password" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mt-1"></div>
+            <button onclick="showScreen('home')" class="yellow-btn w-full py-3 rounded-lg mt-4">Register</button>
+            <p class="text-center text-sm text-gray-400">Already have an account? <span onclick="showScreen('login')" class="text-yellow-400 cursor-pointer">Login</span></p>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: LOGIN -->
+    <div id="login" class="app-screen p-6">
+        <h2 class="text-2xl font-bold mb-1">Welcome Back!</h2>
+        <p class="text-gray-400 mb-6">Login to your account</p>
+        <div class="space-y-4">
+            <div><label class="text-sm">Phone Number</label><input type="tel" placeholder="Enter your phone number" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mt-1"></div>
+            <div><label class="text-sm">Password</label><input type="password" placeholder="Enter your password" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mt-1"></div>
+            <p class="text-right text-sm text-yellow-400 cursor-pointer">Forgot password?</p>
+            <button onclick="showScreen('home')" class="yellow-btn w-full py-3 rounded-lg">Login</button>
+            <div class="text-center text-gray-400 text-sm my-4">Or continue with</div>
+            <div class="flex gap-3">
+                <button class="flex-1 bg-white text-black py-3 rounded-lg font-semibold"><i class="fab fa-google mr-2"></i>Google</button>
+                <button class="flex-1 bg-blue-600 py-3 rounded-lg font-semibold"><i class="fab fa-facebook mr-2"></i>Facebook</button>
+            </div>
+            <p class="text-center text-sm text-gray-400">Don't have an account? <span onclick="showScreen('register')" class="text-yellow-400 cursor-pointer">Register</span></p>
+        </div>
+    </div>
+
+    <!-- SCREEN 4: HOME -->
+    <div id="home" class="app-screen pb-20">
+        <div class="p-4">
+            <div class="flex justify-between items-center mb-4">
+                <div><p class="text-gray-400 text-sm">Good Morning!</p><h2 class="text-xl font-bold">Wilson Desire Hub</h2></div>
+                <i class="fa-regular fa-bell text-xl"></i>
+            </div>
+            <div class="relative mb-4">
+                <input type="text" placeholder="Search for products, services..." class="w-full p-3 pl-10 rounded-lg bg-gray-800 border border-gray-700">
+                <i class="fa fa-search absolute left-3 top-4 text-gray-400"></i>
+            </div>
+            <div class="card-dark p-4 rounded-lg mb-4">
+                <h3 class="font-bold mb-1">SUPPORT LOCAL BUSINESSES</h3>
+                <p class="text-sm text-gray-300">Buy Malawi, Build Malawi</p>
+            </div>
+            <h3 class="font-bold mb-3">Top Categories</h3>
+            <div class="grid grid-cols-4 gap-3 mb-4">
+                <div class="text-center"><div class="card-dark p-3 rounded-lg mb-1"><i class="fa fa-mobile text-yellow-400"></i></div><p class="text-xs">Phones</p></div>
+                <div class="text-center"><div class="card-dark p-3 rounded-lg mb-1"><i class="fa fa-shopping-bag text-yellow-400"></i></div><p class="text-xs">Fashion</p></div>
+                <div class="text-center"><div class="card-dark p-3 rounded-lg mb-1"><i class="fa fa-laptop text-yellow-400"></i></div><p class="text-xs">Electronics</p></div>
+                <div class="text-center"><div class="card-dark p-3 rounded-lg mb-1"><i class="fa fa-ellipsis text-yellow-400"></i></div><p class="text-xs">More</p></div>
+            </div>
+        </div>
+        <!-- BOTTOM NAV -->
+        <div class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-800 flex justify-around py-3">
+            <button onclick="showScreen('home')" class="nav-active text-center"><i class="fa fa-home"></i><p class="text-xs">Home</p></button>
+            <button onclick="showScreen('market')" class="text-center text-gray-400"><i class="fa fa-store"></i><p class="text-xs">Market</p></button>
+            <button onclick="showScreen('services')" class="text-center text-gray-400"><i class="fa fa-th-large"></i><p class="text-xs">AI Hub</p></button>
+            <button onclick="showScreen('aihub')" class="text-center text-gray-400"><i class="fa fa-robot"></i><p class="text-xs">Learn</p></button>
+            <button onclick="showScreen('profile')" class="text-center text-gray-400"><i class="fa fa-user"></i><p class="text-xs">Profile</p></button>
+        </div>
+    </div>
+
+    <!-- SCREEN 5: MARKET -->
+    <div id="market" class="app-screen pb-20 p-4">
+        <h2 class="text-xl font-bold mb-4">Market</h2>
+        <div class="flex gap-2 mb-4 overflow-x-auto">
+            <button class="yellow-btn px-4 py-1 rounded-full text-sm">All</button>
+            <button class="card-dark px-4 py-1 rounded-full text-sm">Phones</button>
+            <button class="card-dark px-4 py-1 rounded-full text-sm">Fashion</button>
+            <button class="card-dark px-4 py-1 rounded-full text-sm">Electronics</button>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div onclick="showScreen('product')" class="card-dark rounded-lg p-2 cursor-pointer">
+                <img src="https://via.placeholder.com/150" class="w-full h-32 object-cover rounded mb-2">
+                <p class="text-sm font-semibold">Samsung A14</p>
+                <p class="text-yellow-400 font-bold">MK 179,999</p>
+            </div>
+            <div class="card-dark rounded-lg p-2">
+                <img src="https://via.placeholder.com/150" class="w-full h-32 object-cover rounded mb-2">
+                <p class="text-sm font-semibold">Men's Hoodie</p>
+                <p class="text-yellow-400 font-bold">MK 15,000</p>
+            </div>
+        </div>
+        <!-- BOTTOM NAV -->
+        <div class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-800 flex justify-around py-3">
+            <button onclick="showScreen('home')" class="text-center text-gray-400"><i class="fa fa-home"></i><p class="text-xs">Home</p></button>
+            <button onclick="showScreen('market')" class="nav-active text-center"><i class="fa fa-store"></i><p class="text-xs">Market</p></button>
+            <button onclick="showScreen('services')" class="text-center text-gray-400"><i class="fa fa-th-large"></i><p class="text-xs">AI Hub</p></button>
+            <button onclick="showScreen('aihub')" class="text-center text-gray-400"><i class="fa fa-robot"></i><p class="text-xs">Learn</p></button>
+            <button onclick="showScreen('profile')" class="text-center text-gray-400"><i class="fa fa-user"></i><p class="text-xs">Profile</p></button>
+        </div>
+    </div>
+
+    <!-- SCREEN 6: PRODUCT -->
+    <div id="product" class="app-screen pb-20">
+        <div class="p-4">
+            <i onclick="showScreen('market')" class="fa fa-arrow-left mb-4 cursor-pointer"></i>
+            <img src="https://via.placeholder.com/400x300" class="w-full rounded-lg mb-4">
+            <h2 class="text-xl font-bold">Samsung Galaxy A14</h2>
+            <p class="text-gray-400 text-sm mb-2">4GB RAM, 64GB ROM</p>
+            <p class="text-2xl font-bold text-yellow-400 mb-4">MK 179,999</p>
+            <div class="flex gap-3">
+                <button class="flex-1 border border-yellow-400 text-yellow-400 py-3 rounded-lg">Add to Cart</button>
+                <button onclick="showScreen('cart')" class="flex-1 yellow-btn py-3 rounded-lg">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 7: CART -->
+    <div id="cart" class="app-screen pb-20 p-4">
+        <h2 class="text-xl font-bold mb-4">Your Cart</h2>
+        <div class="card-dark p-3 rounded-lg mb-3 flex justify-between items-center">
+            <div><p class="font-semibold">Samsung Galaxy A14</p><p class="text-yellow-400">MK 179,999</p></div>
+            <div class="flex items-center gap-2"><button class="bg-gray-700 px-2 rounded">-</button><span>1</span><button class="bg-gray-700 px-2 rounded">+</button></div>
+        </div>
+        <div class="card-dark p-4 rounded-lg mt-6">
+            <div class="flex justify-between mb-2"><span>Subtotal</span><span class="font-bold">MK 210,999</span></div>
+            <button class="yellow-btn w-full py-3 rounded-lg mt-4">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 8: SERVICES -->
+    <div id="services" class="app-screen pb-20 p-4">
+        <h2 class="text-xl font-bold mb-4">Services</h2>
+        <h3 class="font-bold mb-3">Top Services</h3>
+        <div class="grid grid-cols-3 gap-3 mb-6">
+            <div class="card-dark p-3 rounded-lg text-center"><i class="fa fa-mobile-alt text-yellow-400 mb-1"></i><p class="text-xs">Airtel Top Up</p></div>
+            <div class="card-dark p-3 rounded-lg text-center"><i class="fa fa-wifi text-yellow-400 mb-1"></i><p class="text-xs">Buy Bundles</p></div>
+            <div class="card-dark p-3 rounded-lg text-center"><i class="fa fa-money-bill text-yellow-400 mb-1"></i><p class="text-xs">Mobile Money</p></div>
+        </div>
+        <h3 class="font-bold mb-3">Popular Networks</h3>
+        <div class="flex gap-3">
+            <div class="card-dark p-3 rounded-lg"><i class="fa fa-signal text-red-500"></i><p class="text-xs mt-1">Airtel</p></div>
+            <div class="card-dark p-3 rounded-lg"><i class="fa fa-signal text-blue-500"></i><p class="text-xs mt-1">TNM</p></div>
+        </div>
+    </div>
+
+    <!-- SCREEN 9: AI HUB -->
+    <div id="aihub" class="app-screen pb-20 p-4">
+        <h2 class="text-xl font-bold mb-4">AI Hub</h2>
+        <div class="flex gap-2 mb-4">
+            <button class="card-dark px-4 py-1 rounded-full text-sm">English</button>
+            <button class="yellow-btn px-4 py-1 rounded-full text-sm">Chichewa</button>
+        </div>
+        <div class="card-dark p-4 rounded-lg mb-4">
+            <p class="font-bold">Moni!</p>
+            <p class="text-sm text-gray-300">Ndine AI wanu wa Wilson Desire Hub. Ndingakuthandizeni bwanji lero?</p>
+        </div>
+        <div class="space-y-2">
+            <button class="card-dark w-full p-3 rounded-lg text-left text-sm">Ndithandizeni chitupa cha bizinesi</button>
+            <button class="card-dark w-full p-3 rounded-lg text-left text-sm">Kodi mungandiwandize bwanji?</button>
+            <button class="card-dark w-full p-3 rounded-lg text-left text-sm">Maphunziro a MANEB</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 10: PROFILE -->
+    <div id="profile" class="app-screen pb-20 p-4">
+        <div class="text-center mb-6">
+            <div class="w-20 h-20 bg-gray-700 rounded-full mx-auto mb-2"></div>
+            <h2 class="text-xl font-bold">John Mwafulirwa</h2>
+            <p class="text-gray-400 text-sm">0980 638 721</p>
+        </div>
+        <div class="space-y-2">
+            <div class="card-dark p-4 rounded-lg flex justify-between items-center"><span><i class="fa fa-box mr-3"></i>My Orders</span><i class="fa fa-chevron-right"></i></div>
+            <div class="card-dark p-4 rounded-lg flex justify-between items-center"><span><i class="fa fa-store mr-3"></i>My Businesses</span><i class="fa fa-chevron-right"></i></div>
+            <div class="card-dark p-4 rounded-lg flex justify-between items-center"><span><i class="fa fa-wallet mr-3"></i>My Wallet</span><span>MK 50,000</span></div>
+            <div class="card-dark p-4 rounded-lg flex justify-between items-center"><span><i class="fa fa-cog mr-3"></i>Settings</span><i class="fa fa-chevron-right"></i></div>
+            <div onclick="showScreen('splash')" class="card-dark p-4 rounded-lg flex justify-between items-center text-red-400"><span><i class="fa fa-sign-out mr-3"></i>Logout</span></div>
+        </div>
+    </div>
+
+    <script>
+        let currentScreen = 'splash';
+        function showScreen(screenId) {
+            document.querySelectorAll('.app-screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+            currentScreen = screenId;
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
